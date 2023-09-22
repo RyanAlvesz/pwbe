@@ -11,12 +11,13 @@ const criarTabuada = (valorTabuada, numeroInicial, numeroFinal) => {
     let nI = numeroInicial
     let nF = numeroFinal
 
-    console.log(`Tabuada do ${tabuada}`)
+    console.log(`Tabuada do [${tabuada}]`)
 
-    while(nI < nF){
+    while(nI <= nF){
 
         let resultadoTabuada = tabuada * nI
         console.log(`${tabuada} x ${nI} = ${resultadoTabuada}`)
+        nI++
 
     }
 
