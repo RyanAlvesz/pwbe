@@ -15,7 +15,7 @@ const calcularTabuada = function(valorTabuada, contadorInicial, contadorFinal){
     let resultado
     let status = false
 
-    if(Number(final) < (inicial)){
+    if(Number(final) < Number(inicial)){
 
         final = contadorInicial
         inicial = contadorFinal
