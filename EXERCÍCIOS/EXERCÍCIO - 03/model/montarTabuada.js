@@ -4,6 +4,7 @@
 * Autor: Ryan Alves
 * Versão: 1.0
 ****************************************************************************************************************************************************/
+
 const criarTabuada = (valorTabuada, numeroInicial, numeroFinal) => {
 
     let tabuada = valorTabuada
