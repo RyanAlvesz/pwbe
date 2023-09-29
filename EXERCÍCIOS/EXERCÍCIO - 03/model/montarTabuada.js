@@ -55,7 +55,7 @@ const tabuada = (valorTabuadaInicial, valorTabuadaFinal, valorNumeroInicial, val
         console.log('ERRO: Todos os valores devem ser números')
         return false
 
-    }else if (tabuadaInicial < 1 || tabuadaInicial > 100 || tabuadaFinal < 1 || tabuadaFinal > 100){
+    }else if (Number(tabuadaInicial) < 2 || Number(tabuadaInicial) > 100 || Number(tabuadaFinal) < 2 || Number(tabuadaFinal) > 100){
         console.log('ERRO: Você deve escolher uma tabuada entre 2 e 100')
         return false
 
@@ -64,13 +64,15 @@ const tabuada = (valorTabuadaInicial, valorTabuadaFinal, valorNumeroInicial, val
         return false
     }
 
-    let contInicial = numeroInicial
+    tabuadaInicial = Number(tabuadaInicial)
+    tabuadaFinal = Number(tabuadaFinal)
+    numeroInicial = Number(numeroInicial)
+    numeroFinal = Number(numeroFinal)
 
-    while(numeroInicial < numeroFinal){
+    while(tabuadaInicial <= tabuadaFinal){
 
-        criarTabuada(tabuadaInicial, contInicial, numeroFinal)
+        criarTabuada(tabuadaInicial, numeroInicial, numeroFinal)
         tabuadaInicial++
-        numeroInicial++
 
     }
 
