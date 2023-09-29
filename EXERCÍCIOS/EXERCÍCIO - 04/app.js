@@ -13,7 +13,7 @@ var entradaDeDados = readline.createInterface({
     output: process.stdout
 })
 
-entradaDeDados.question('Inseria o numero para descobrir seu fatorial: ', function(valorFatorial){
+entradaDeDados.question('Insira o numero para descobrir seu fatorial: ', function(valorFatorial){
 
     fatorial = valorFatorial
 
