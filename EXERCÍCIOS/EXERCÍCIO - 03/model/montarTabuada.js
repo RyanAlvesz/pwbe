@@ -33,6 +33,8 @@ const tabuada = (valorTabuadaInicial, valorTabuadaFinal, valorNumeroInicial, val
     let numeroInicial = String(valorNumeroInicial).replace(',', '.')
     let numeroFinal = String(valorNumeroFinal).replace(',', '.')
 
+    let status
+
     if(Number(numeroFinal) < Number(numeroInicial)){
 
         numeroFinal = String(valorNumeroInicial).replace(',', '.')
@@ -49,32 +51,38 @@ const tabuada = (valorTabuadaInicial, valorTabuadaFinal, valorNumeroInicial, val
 
     if(tabuadaInicial == '' || tabuadaFinal == '' || numeroInicial == '' || numeroFinal == '' ){
         console.log('ERRO: Todos os valores devem ser preenchidos')
-        return false
+        status = false
         
     } else if(isNaN(tabuadaInicial) || isNaN(tabuadaFinal) || isNaN(numeroInicial) || isNaN(numeroFinal)){
         console.log('ERRO: Todos os valores devem ser números')
-        return false
+        status = false
 
     }else if (Number(tabuadaInicial) < 2 || Number(tabuadaInicial) > 100 || Number(tabuadaFinal) < 2 || Number(tabuadaFinal) > 100){
         console.log('ERRO: Você deve escolher uma tabuada entre 2 e 100')
-        return false
+        status = false
 
     }else if (numeroInicial < 1 || numeroInicial > 50 || numeroFinal < 1 || numeroFinal > 50){
         console.log('ERRO: Escolha um valor entre 1 e 50 para calcular a tabuada')
-        return false
+        status = false
+    } else {
+
+        status = true
+        
+        tabuadaInicial = Number(tabuadaInicial)
+        tabuadaFinal = Number(tabuadaFinal)
+        numeroInicial = Number(numeroInicial)
+        numeroFinal = Number(numeroFinal)
+    
+        while(tabuadaInicial <= tabuadaFinal){
+    
+            criarTabuada(tabuadaInicial, numeroInicial, numeroFinal)
+            tabuadaInicial++
+    
+        }
+
     }
 
-    tabuadaInicial = Number(tabuadaInicial)
-    tabuadaFinal = Number(tabuadaFinal)
-    numeroInicial = Number(numeroInicial)
-    numeroFinal = Number(numeroFinal)
-
-    while(tabuadaInicial <= tabuadaFinal){
-
-        criarTabuada(tabuadaInicial, numeroInicial, numeroFinal)
-        tabuadaInicial++
-
-    }
+    return status
 
 }
 
